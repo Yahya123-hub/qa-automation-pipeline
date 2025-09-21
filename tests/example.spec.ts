@@ -7,3 +7,9 @@ test('valid login', async ({ page }) => {
   await page.click('button[type=submit]');
   await expect(page.locator('#dashboard')).toBeVisible();
 });
+
+
+test('homepage has correct title', async ({ page }) => {
+  await page.goto('https://playwright.dev');
+  await expect(page).toHaveTitle(/Playwright/);
+});
